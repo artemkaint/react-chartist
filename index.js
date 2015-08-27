@@ -26,7 +26,7 @@ class ChartistGraph extends React.Component {
   }
 
   updateChart(config) {
-    //let Chartist = require('chartist-node');
+    let Chartist = require('chartist');
 
     let { type, data } = config;
     let options = config.options || {};
