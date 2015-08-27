@@ -1,10 +1,11 @@
 'use strict';
 
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 class ChartistGraph extends React.Component {
 
-  displayName: 'ChartistGraph'
+  displayName = 'ChartistGraph';
 
   componentWillReceiveProps(newProps) {
     this.updateChart(newProps);
@@ -25,7 +26,7 @@ class ChartistGraph extends React.Component {
   }
 
   updateChart(config) {
-    let Chartist = require('chartist');
+    //let Chartist = require('chartist-node');
 
     let { type, data } = config;
     let options = config.options || {};
@@ -35,7 +36,7 @@ class ChartistGraph extends React.Component {
     if (this.chartist) {
       this.chartist.update(data, options, responsiveOptions);
     } else {
-      this.chartist = new Chartist[type](React.findDOMNode(this), data, options, responsiveOptions);
+      this.chartist = new Chartist[type](ReactDOM.findDOMNode(this), data, options, responsiveOptions);
 
       if (config.listener) {
         for (event in config.listener) {
@@ -61,6 +62,6 @@ ChartistGraph.propTypes = {
   data: React.PropTypes.object.isRequired,
   options: React.PropTypes.object,
   responsiveOptions: React.PropTypes.array
-}
+};
 
 export default ChartistGraph;
