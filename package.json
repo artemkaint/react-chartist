@@ -34,7 +34,8 @@
     "react-dom": "0.14.0-beta3"
   },
   "scripts": {
-    "build": "babel index.js > dist/index.js"
+    "build": "babel index.js > dist/index.js",
+    "install": "babel index.js > dist/index.js"
   },
   "devDependencies": {
     "babel": "^5.1.8",
