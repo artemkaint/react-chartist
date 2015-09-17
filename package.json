@@ -34,7 +34,8 @@
     "react-dom": "0.14.0-rc1"
   },
   "scripts": {
-    "build": "mkdir dist && babel index.js > dist/index.js"
+    "build": "mkdir dist && babel index.js > dist/index.js",
+    "install": "mkdir dist && babel index.js > dist/index.js"
   },
   "devDependencies": {
     "babel": "^5.1.8",
